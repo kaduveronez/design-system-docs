@@ -1,0 +1,13 @@
+{
+  "title": "Formulários",
+  "pages": [
+    "input",
+    "textarea",
+    "checkbox",
+    "select",
+    "switch",
+    "slider",
+    "date-picker",
+    "form"
+  ]
+}

@@ -4,7 +4,7 @@ import { source } from '@/lib/source';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <DocsLayout tree={source.pageTree} nav={{ title: 'Geist Design System' }}>
+    <DocsLayout tree={source.pageTree} nav={{ title: 'Gen QRcode Design System' }}>
       {children}
     </DocsLayout>
   );

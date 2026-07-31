@@ -1,0 +1,38 @@
+---
+title: Button
+description: O componente de botão interativo utilizado em toda a plataforma Gen QRcode.
+---
+
+# Button
+
+O componente de botão interativo utilizado em toda a plataforma Gen QRcode.
+
+import { Button } from '@/components/ui/button'
+
+## Preview Visual
+
+<div className="flex flex-wrap items-center justify-center gap-4 p-10 mt-4 border border-border rounded-xl bg-card shadow-sm">
+  <Button variant="default">Ação Principal</Button>
+  <Button variant="secondary">Ação Secundária</Button>
+  <Button variant="destructive">Excluir</Button>
+  <Button variant="outline">Contorno</Button>
+</div>
+
+## Código para Implementação
+
+Para utilizar este componente, importe e declare no seu arquivo:
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export function ExemploBotoes() {
+  return (
+    <div className="flex gap-4">
+      <Button variant="default">Ação Principal</Button>
+      <Button variant="secondary">Ação Secundária</Button>
+      <Button variant="destructive">Excluir</Button>
+      <Button variant="outline">Contorno</Button>
+    </div>
+  )
+}
+```

@@ -1,0 +1,20 @@
+{
+  "title": "Documentação",
+  "pages": [
+    "index",
+    "---Fundações---",
+    "foundations",
+    "---Ações---",
+    "actions",
+    "---Formulários---",
+    "forms",
+    "---Navegação---",
+    "navigation",
+    "---Exibição de Dados---",
+    "data-display",
+    "---Feedback---",
+    "feedback",
+    "---Sobreposições---",
+    "overlays"
+  ]
+}

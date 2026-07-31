@@ -1,0 +1,10 @@
+{
+  "title": "Feedback",
+  "pages": [
+    "alert",
+    "alert-dialog",
+    "toast",
+    "skeleton",
+    "progress"
+  ]
+}

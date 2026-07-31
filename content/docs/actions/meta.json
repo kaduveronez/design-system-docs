@@ -1,0 +1,9 @@
+{
+  "title": "Ações",
+  "pages": [
+    "button",
+    "dropdown-menu",
+    "context-menu",
+    "hover-card"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Exibição de Dados",
+  "pages": [
+    "card",
+    "table",
+    "badge",
+    "avatar",
+    "accordion",
+    "carousel"
+  ]
+}

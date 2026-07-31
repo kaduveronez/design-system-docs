@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Geist Design System Docs',
-  description: 'Documentação oficial do Design System inspirado no Geist da Vercel',
+  title: 'Gen QRcode Design System Docs',
+  description: 'Documentação oficial do Gen QRcode Design System',
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
