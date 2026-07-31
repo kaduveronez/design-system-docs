@@ -14,12 +14,12 @@ export function Avatar({
   ...props
 }: AvatarProps) {
   return (
-    <div className="relative inline-flex shrink-0">
+    <div className="relative inline-block shrink-0 leading-none align-middle">
       <div
         data-slot="avatar"
         data-size={size}
         className={cn(
-          "relative flex shrink-0 overflow-hidden rounded-full border border-border bg-muted select-none items-center justify-center",
+          "relative block shrink-0 overflow-hidden rounded-full border border-border bg-muted select-none",
           size === "sm" && "size-8",
           size === "default" && "size-10",
           size === "lg" && "size-12",
@@ -50,7 +50,7 @@ export function AvatarImage({
       alt={alt}
       onError={() => setHasError(true)}
       className={cn(
-        "absolute inset-0 aspect-square size-full rounded-full object-cover z-10",
+        "absolute inset-0 block size-full rounded-full object-cover z-10 m-0 p-0 border-0",
         className
       )}
       {...props}
@@ -67,7 +67,7 @@ export function AvatarFallback({
     <div
       data-slot="avatar-fallback"
       className={cn(
-        "absolute inset-0 z-0 flex size-full items-center justify-center rounded-full bg-muted font-semibold text-muted-foreground text-xs uppercase",
+        "absolute inset-0 z-0 flex size-full items-center justify-center rounded-full bg-muted font-semibold text-muted-foreground text-xs uppercase m-0 p-0",
         className
       )}
       {...props}
@@ -82,7 +82,7 @@ export function AvatarBadge({ className, ...props }: React.ComponentProps<"span"
     <span
       data-slot="avatar-badge"
       className={cn(
-        "absolute -right-0.5 -bottom-0.5 z-20 block rounded-full ring-2 ring-background bg-green-500 size-3 shrink-0",
+        "absolute right-0 bottom-0 z-20 block rounded-full ring-2 ring-background bg-green-500 size-3 shrink-0",
         className
       )}
       {...props}
