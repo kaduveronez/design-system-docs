@@ -1,6 +1,6 @@
 ---
 title: Button
-description: O componente de botão interativo utilizado em toda a plataforma Gen QRcode.
+description: Botão interativo para ações do usuário.
 ---
 
 # Button
@@ -8,24 +8,26 @@ description: O componente de botão interativo utilizado em toda a plataforma Ge
 O componente de botão interativo utilizado em toda a plataforma Gen QRcode.
 
 import { Button } from '@/components/ui/button'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
-## Preview Visual
+## Preview Interativo
 
-<div className="flex flex-wrap items-center justify-center gap-4 p-10 mt-4 border border-border rounded-xl bg-card shadow-sm">
-  <Button variant="default">Ação Principal</Button>
-  <Button variant="secondary">Ação Secundária</Button>
-  <Button variant="destructive">Excluir</Button>
-  <Button variant="outline">Contorno</Button>
-</div>
+<ComponentPreview code={`import { Button } from "@/components/ui/button"\n\nexport function Exemplo() {\n  return (\n    <div className="flex gap-4">\n      <Button variant="default">Default</Button>\n      <Button variant="secondary">Secondary</Button>\n      <Button variant="destructive">Destructive</Button>\n      <Button variant="outline">Outline</Button>\n      <Button variant="ghost">Ghost</Button>\n    </div>\n  )\n}`}>
+  <div className="flex flex-wrap gap-4 items-center justify-center">
+    <Button variant="default">Ação Principal</Button>
+    <Button variant="secondary">Ação Secundária</Button>
+    <Button variant="destructive">Excluir</Button>
+    <Button variant="outline">Contorno</Button>
+    <Button variant="ghost">Ghost</Button>
+  </div>
+</ComponentPreview>
 
-## Código para Implementação
-
-Para utilizar este componente, importe e declare no seu arquivo:
+## Código Manual
 
 ```tsx
 import { Button } from "@/components/ui/button"
 
-export function ExemploBotoes() {
+export function Exemplo() {
   return (
     <div className="flex gap-4">
       <Button variant="default">Ação Principal</Button>

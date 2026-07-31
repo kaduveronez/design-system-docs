@@ -6,3 +6,40 @@ description: Abas para organização de conteúdos intercalados.
 # Tabs
 
 Alterna entre diferentes visões de conteúdo dentro de um mesmo contêiner.
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"\n\nexport function TabsDemo() {\n  return (\n    <Tabs defaultValue="url" className="w-[400px]">\n      <TabsList className="grid w-full grid-cols-2">\n        <TabsTrigger value="url">URL Web</TabsTrigger>\n        <TabsTrigger value="vcard">VCard</TabsTrigger>\n      </TabsList>\n      <TabsContent value="url" className="p-4 border rounded-md">Conteúdo URL</TabsContent>\n      <TabsContent value="vcard" className="p-4 border rounded-md">Conteúdo VCard</TabsContent>\n    </Tabs>\n  )\n}`}>
+  <Tabs defaultValue="url" className="w-[350px]">
+    <TabsList className="grid w-full grid-cols-2">
+      <TabsTrigger value="url">Link Web</TabsTrigger>
+      <TabsTrigger value="vcard">Cartão VCard</TabsTrigger>
+    </TabsList>
+    <TabsContent value="url" className="p-4 border border-border rounded-xl bg-background mt-2 text-xs">
+      Insira o link para redirecionamento do seu QR Code dinâmico.
+    </TabsContent>
+    <TabsContent value="vcard" className="p-4 border border-border rounded-xl bg-background mt-2 text-xs">
+      Preencha seu nome, telefone e e-mail profissional.
+    </TabsContent>
+  </Tabs>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+export function TabsDemo() {
+  return (
+    <Tabs defaultValue="account">
+      <TabsList>
+        <TabsTrigger value="account">Conta</TabsTrigger>
+        <TabsTrigger value="password">Senha</TabsTrigger>
+      </TabsList>
+    </Tabs>
+  )
+}
+```

@@ -5,4 +5,26 @@ description: Seletor de data e calendário interativo.
 
 # Date Picker
 
-Componente de calendário para seleção de datas individuais ou intervalos.
+Seletor de data para agendamento de expiração de QR Codes.
+
+import { Input } from '@/components/ui/input'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import { Input } from "@/components/ui/input"\n\nexport function DatePickerDemo() {\n  return (\n    <Input type="date" className="w-[240px]" />\n  )\n}`}>
+  <div className="w-full max-w-xs space-y-2">
+    <label className="text-xs font-medium text-muted-foreground">Data de Expiração do QR Code</label>
+    <Input type="date" className="w-full" defaultValue="2026-12-31" />
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Input } from "@/components/ui/input"
+
+export function DatePickerDemo() {
+  return <Input type="date" />
+}
+```

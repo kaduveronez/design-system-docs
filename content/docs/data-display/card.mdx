@@ -5,11 +5,43 @@ description: Contêineres flexíveis para agrupamento de informações.
 
 # Card
 
-Contêiner estruturado para exibir conteúdo relacionado.
+Exibe informações relacionadas em um contêiner estruturado.
 
-## Preview Visual
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
-<div className="p-6 max-w-sm mx-auto border border-border rounded-xl bg-card shadow-sm space-y-3">
-  <h3 className="font-semibold text-lg text-foreground">QR Code Dinâmico</h3>
-  <p className="text-sm text-muted-foreground">Monitore acessos e altere a URL de destino em tempo real.</p>
-</div>
+## Preview Interativo
+
+<ComponentPreview code={`import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"\nimport { Button } from "@/components/ui/button"\n\nexport function CardDemo() {\n  return (\n    <Card className="w-[350px]">\n      <CardHeader>\n        <CardTitle>QR Code Dinâmico</CardTitle>\n        <CardDescription>Gerencie o link de redirecionamento.</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <p className="text-sm">Status: Ativo com 1.240 escaneamentos.</p>\n      </CardContent>\n      <CardFooter>\n        <Button className="w-full">Editar Destino</Button>\n      </CardFooter>\n    </Card>\n  )\n}`}>
+  <Card className="w-[350px]">
+    <CardHeader>
+      <CardTitle>QR Code Dinâmico</CardTitle>
+      <CardDescription>Campanha de Marketing Verão 2026</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <div className="space-y-1">
+        <p className="text-xs text-muted-foreground">Destino Atual:</p>
+        <p className="text-sm font-mono text-primary font-semibold">https://genqrcode.com/promo</p>
+      </div>
+    </CardContent>
+    <CardFooter>
+      <Button className="w-full bg-primary text-primary-foreground">Editar Destino</Button>
+    </CardFooter>
+  </Card>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+export function CardDemo() {
+  return (
+    <Card>
+      <CardHeader><CardTitle>Título</CardTitle></CardHeader>
+      <CardContent><p>Conteúdo</p></CardContent>
+    </Card>
+  )
+}
+```

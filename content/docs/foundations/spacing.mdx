@@ -1,16 +1,28 @@
 ---
-title: Espaçamento & Radius
-description: Escala de espaçamentos e raio de arredondamento de bordas.
+title: Espaçamento e Bordas
+description: Escala de arredondamentos (Border Radius) e padrões de spacing.
 ---
 
 # Espaçamento e Bordas
 
-Definições de padding, margin e raios de curvatura de bordas (`--radius: 0.5rem`).
+Tokens visuais de curvatura de borda (`--radius: 0.5rem`).
 
-## Raio de Borda (Border Radius)
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
-<div className="grid grid-cols-3 gap-4 p-8 border border-border rounded-xl bg-card shadow-sm mt-6 text-center text-xs">
-  <div className="p-4 bg-muted border border-border rounded-sm">rounded-sm</div>
-  <div className="p-4 bg-muted border border-border rounded-md">rounded-md</div>
-  <div className="p-4 bg-muted border border-border rounded-xl">rounded-xl</div>
+## Preview Interativo
+
+<ComponentPreview code={`export function BorderDemo() {\n  return (\n    <div className="grid grid-cols-3 gap-4 text-xs text-center">\n      <div className="p-4 bg-muted rounded-sm">rounded-sm</div>\n      <div className="p-4 bg-muted rounded-md">rounded-md</div>\n      <div className="p-4 bg-muted rounded-xl">rounded-xl</div>\n    </div>\n  )\n}`}>
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-lg text-center text-xs">
+    <div className="p-6 bg-muted border border-border rounded-sm font-mono">rounded-sm (calc(var(--radius) - 4px))</div>
+    <div className="p-6 bg-muted border border-border rounded-md font-mono">rounded-md (calc(var(--radius) - 2px))</div>
+    <div className="p-6 bg-muted border border-border rounded-xl font-mono">rounded-xl (calc(var(--radius) + 4px))</div>
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+<div className="rounded-md border border-border p-4">
+  Conteúdo com raio de borda padrão
 </div>
+```

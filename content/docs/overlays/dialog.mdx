@@ -5,4 +5,57 @@ description: Janela modal sobreposta para tarefas focadas.
 
 # Dialog
 
-Caixa de diálogo que se sobrepõe à página principal para capturar atenção ou dados.
+Caixa de diálogo modal que se posiciona sobre a página para capturar ações focadas.
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from "@/components/ui/dialog"\nimport { Button } from "@/components/ui/button"\nimport { Input } from "@/components/ui/input"\n\nexport function DialogDemo() {\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant="default">Novo QR Code</Button>\n      </DialogTrigger>\n      <DialogContent>\n        <DialogHeader>\n          <DialogTitle>Criar QR Code</DialogTitle>\n          <DialogDescription>\n            Digite a URL para gerar a imagem vetorial.\n          </DialogDescription>\n        </DialogHeader>\n        <Input placeholder="https://genqrcode.com" />\n        <Button>Gerar Agora</Button>\n      </DialogContent>\n    </Dialog>\n  )\n}`}>
+  <Dialog>
+    <DialogTrigger asChild>
+      <Button variant="default" className="bg-primary text-primary-foreground">Criar Novo QR Code</Button>
+    </DialogTrigger>
+    <DialogContent className="sm:max-w-[425px]">
+      <DialogHeader>
+        <DialogTitle>Criar QR Code Dinâmico</DialogTitle>
+        <DialogDescription>
+          Digite o destino e o nome da sua nova campanha.
+        </DialogDescription>
+      </DialogHeader>
+      <div className="space-y-3 py-2">
+        <Input placeholder="Nome da Campanha" defaultValue="Promoção Verão" />
+        <Input placeholder="https://genqrcode.com/promo" />
+      </div>
+      <Button className="w-full bg-primary text-primary-foreground">Gerar QR Code</Button>
+    </DialogContent>
+  </Dialog>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+
+export function DialogDemo() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild><Button>Abrir Modal</Button></DialogTrigger>
+      <DialogContent>
+        <DialogHeader><DialogTitle>Título Modal</DialogTitle></DialogHeader>
+      </DialogContent>
+    </Dialog>
+  )
+}
+```

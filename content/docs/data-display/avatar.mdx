@@ -5,4 +5,36 @@ description: Imagem de perfil do usuário com tratamento de fallback.
 
 # Avatar
 
-Componente de imagem circular com exibição de iniciais do usuário quando a imagem não carrega.
+Componente visual de imagem circular com iniciais em caso de falha de carregamento.
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport function AvatarDemo() {\n  return (\n    <Avatar>\n      <AvatarImage src="https://github.com/shadcn.png" alt="@genqrcode" />\n      <AvatarFallback>GQ</AvatarFallback>\n    </Avatar>\n  )\n}`}>
+  <div className="flex items-center justify-center gap-4">
+    <Avatar className="h-12 w-12 border border-border">
+      <AvatarImage src="https://github.com/shadcn.png" alt="@genqrcode" />
+      <AvatarFallback>GQ</AvatarFallback>
+    </Avatar>
+    <Avatar className="h-12 w-12 border border-border bg-primary text-primary-foreground font-semibold">
+      <AvatarFallback>GQ</AvatarFallback>
+    </Avatar>
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
+export function AvatarDemo() {
+  return (
+    <Avatar>
+      <AvatarImage src="https://github.com/shadcn.png" />
+      <AvatarFallback>GQ</AvatarFallback>
+    </Avatar>
+  )
+}
+```

@@ -1,8 +1,59 @@
 ---
 title: Pagination
-description: Controle de navegação de páginas para grandes listas e tabelas.
+description: Controle de navegação por páginas.
 ---
 
 # Pagination
 
 Divide dados extensos em múltiplas páginas.
+
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from '@/components/ui/pagination'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n} from "@/components/ui/pagination"\n\nexport function PaginationDemo() {\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem>\n          <PaginationPrevious href="#" />\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink href="#" isActive>1</PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink href="#">2</PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationNext href="#" />\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  )\n}`}>
+  <Pagination>
+    <PaginationContent>
+      <PaginationItem>
+        <PaginationPrevious href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#" isActive>1</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">2</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">3</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationNext href="#" />
+      </PaginationItem>
+    </PaginationContent>
+  </Pagination>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination"
+
+export function PaginationDemo() {
+  return (
+    <Pagination>
+      <PaginationContent>
+        <PaginationItem><PaginationLink href="#">1</PaginationLink></PaginationItem>
+      </PaginationContent>
+    </Pagination>
+  )
+}
+```

@@ -1,21 +1,52 @@
 ---
 title: Iconografia
-description: Biblioteca padrão de ícones baseada em Lucide React.
+description: Biblioteca de ícones padrão Lucide React do Gen QRcode.
 ---
 
 # Iconografia
 
-Utilizamos a biblioteca **Lucide React** para fornecer ícones vetoriais consistentes.
+Ícones vetoriais padronizados para botões, sinalização e navegação.
 
 import { QrCode, Sparkles, Check, Copy, ArrowRight, Settings } from 'lucide-react'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
-## Preview de Ícones
+## Preview Interativo
 
-<div className="flex items-center gap-6 p-8 border border-border rounded-xl bg-card shadow-sm mt-6">
-  <QrCode className="h-6 w-6 text-primary" />
-  <Sparkles className="h-6 w-6 text-primary" />
-  <Check className="h-6 w-6 text-green-600" />
-  <Copy className="h-6 w-6 text-foreground" />
-  <ArrowRight className="h-6 w-6 text-foreground" />
-  <Settings className="h-6 w-6 text-muted-foreground" />
-</div>
+<ComponentPreview code={`import { QrCode, Sparkles, Check, Copy, ArrowRight, Settings } from 'lucide-react'\n\nexport function IconesDemo() {\n  return (\n    <div className="flex gap-6">\n      <QrCode className="h-6 w-6 text-primary" />\n      <Sparkles className="h-6 w-6 text-primary" />\n      <Check className="h-6 w-6 text-green-600" />\n      <Copy className="h-6 w-6 text-foreground" />\n      <ArrowRight className="h-6 w-6 text-foreground" />\n      <Settings className="h-6 w-6 text-muted-foreground" />\n    </div>\n  )\n}`}>
+  <div className="flex flex-wrap items-center justify-center gap-6">
+    <div className="flex flex-col items-center gap-2">
+      <QrCode className="h-7 w-7 text-primary" />
+      <span className="text-[10px] font-mono">QrCode</span>
+    </div>
+    <div className="flex flex-col items-center gap-2">
+      <Sparkles className="h-7 w-7 text-primary" />
+      <span className="text-[10px] font-mono">Sparkles</span>
+    </div>
+    <div className="flex flex-col items-center gap-2">
+      <Check className="h-7 w-7 text-green-600" />
+      <span className="text-[10px] font-mono">Check</span>
+    </div>
+    <div className="flex flex-col items-center gap-2">
+      <Copy className="h-7 w-7 text-foreground" />
+      <span className="text-[10px] font-mono">Copy</span>
+    </div>
+    <div className="flex flex-col items-center gap-2">
+      <ArrowRight className="h-7 w-7 text-foreground" />
+      <span className="text-[10px] font-mono">ArrowRight</span>
+    </div>
+    <div className="flex flex-col items-center gap-2">
+      <Settings className="h-7 w-7 text-muted-foreground" />
+      <span className="text-[10px] font-mono">Settings</span>
+    </div>
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { QrCode, Sparkles, Check, Copy } from 'lucide-react'
+
+export function IconesDemo() {
+  return <QrCode className="h-6 w-6 text-primary" />
+}
+```

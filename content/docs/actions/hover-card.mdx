@@ -5,4 +5,53 @@ description: Cartão informativo exibido ao passar o cursor sobre um elemento.
 
 # Hover Card
 
-Permite visualizar detalhes adicionais quando o usuário passa o mouse sobre um link ou gatilho.
+Permite visualizar detalhes adicionais quando o usuário passa o mouse sobre um link ou elemento.
+
+import { Button } from '@/components/ui/button'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import {\n  HoverCard,\n  HoverCardContent,\n  HoverCardTrigger,\n} from "@/components/ui/hover-card"\nimport { Button } from "@/components/ui/button"\n\nexport function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <HoverCardTrigger asChild>\n        <Button variant="link">@genqrcode</Button>\n      </HoverCardTrigger>\n      <HoverCardContent className="w-80">\n        <div className="space-y-1">\n          <h4 className="text-sm font-semibold">Gen QRcode Platform</h4>\n          <p className="text-sm text-muted-foreground">\n            Plataforma de criação e gerenciamento dinâmico de QR codes.\n          </p>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  )\n}`}>
+  <HoverCard>
+    <HoverCardTrigger asChild>
+      <Button variant="link" className="text-primary font-semibold">@genqrcode</Button>
+    </HoverCardTrigger>
+    <HoverCardContent className="w-80">
+      <div className="space-y-1">
+        <h4 className="text-sm font-semibold">Gen QRcode Platform</h4>
+        <p className="text-sm text-muted-foreground">
+          Plataforma de criação e gerenciamento dinâmico de QR codes com análise em tempo real.
+        </p>
+        <div className="flex items-center pt-2 text-xs text-muted-foreground">
+          Criado por Gen QRcode Team
+        </div>
+      </div>
+    </HoverCardContent>
+  </HoverCard>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
+import { Button } from "@/components/ui/button"
+
+export function HoverCardDemo() {
+  return (
+    <HoverCard>
+      <HoverCardTrigger asChild>
+        <Button variant="link">@genqrcode</Button>
+      </HoverCardTrigger>
+      <HoverCardContent>
+        <p className="text-sm">Gen QRcode Platform</p>
+      </HoverCardContent>
+    </HoverCard>
+  )
+}
+```

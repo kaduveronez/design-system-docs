@@ -5,4 +5,29 @@ description: Marcadores visuais para estados de carregamento.
 
 # Skeleton
 
-Exibe blocos animados indicando que o conteúdo está sendo carregado.
+Blocos animados usados para simular o layout enquanto o conteúdo carrega de forma assíncrona.
+
+import { Skeleton } from '@/components/ui/skeleton'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import { Skeleton } from "@/components/ui/skeleton"\n\nexport function SkeletonDemo() {\n  return (\n    <div className="flex items-center space-x-4">\n      <Skeleton className="h-12 w-12 rounded-full" />\n      <div className="space-y-2">\n        <Skeleton className="h-4 w-[250px]" />\n        <Skeleton className="h-4 w-[200px]" />\n      </div>\n    </div>\n  )\n}`}>
+  <div className="flex items-center space-x-4">
+    <Skeleton className="h-14 w-14 rounded-xl bg-muted" />
+    <div className="space-y-2">
+      <Skeleton className="h-4 w-[220px] bg-muted" />
+      <Skeleton className="h-4 w-[160px] bg-muted" />
+    </div>
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Skeleton } from "@/components/ui/skeleton"
+
+export function SkeletonDemo() {
+  return <Skeleton className="h-4 w-[200px]" />
+}
+```

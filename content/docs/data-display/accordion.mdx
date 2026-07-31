@@ -6,3 +6,47 @@ description: Painéis sanfonados e retráteis para expansão de conteúdo.
 # Accordion & Collapsible
 
 Permite ocultar e revelar blocos de informação de forma interativa.
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from "@/components/ui/accordion"\n\nexport function AccordionDemo() {\n  return (\n    <Accordion type="single" collapsible className="w-full">\n      <AccordionItem value="item-1">\n        <AccordionTrigger>Como alterar a URL do QR Code?</AccordionTrigger>\n        <AccordionContent>\n          Acesse o painel, selecione o QR Code dinâmico e edite o destino.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  )\n}`}>
+  <Accordion type="single" collapsible className="w-full max-w-md">
+    <AccordionItem value="item-1">
+      <AccordionTrigger className="text-sm font-semibold">Como funciona o QR Code Dinâmico?</AccordionTrigger>
+      <AccordionContent className="text-xs text-muted-foreground">
+        QR Codes dinâmicos permitem alterar o destino do link a qualquer momento sem precisar reimprimir o código físico.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-2">
+      <AccordionTrigger className="text-sm font-semibold">Quais formatos de exportação são suportados?</AccordionTrigger>
+      <AccordionContent className="text-xs text-muted-foreground">
+        Oferecemos suporte a imagens em alta definição PNG e vetores escaláveis SVG.
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
+export function AccordionDemo() {
+  return (
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Dúvida frequente</AccordionTrigger>
+        <AccordionContent>Resposta explicativa</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  )
+}
+```

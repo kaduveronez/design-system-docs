@@ -1,8 +1,54 @@
 ---
-title: Checkbox & Radio
+title: Checkbox & Radio Group
 description: Seleção de opções únicas e múltiplas.
 ---
 
 # Checkbox & Radio Group
 
-Componentes de seleção booleana ou grupo exclusivo.
+Permite que o usuário selecione um ou mais itens em uma lista de opções.
+
+import { Checkbox } from '@/components/ui/checkbox'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import { Checkbox } from "@/components/ui/checkbox"\nimport { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"\n\nexport function SelectionDemo() {\n  return (\n    <div className="space-y-6">\n      <div className="flex items-center space-x-2">\n        <Checkbox id="terms" />\n        <label htmlFor="terms" className="text-sm font-medium">Aceito os termos de serviço</label>\n      </div>\n    </div>\n  )\n}`}>
+  <div className="space-y-6 w-full max-w-xs">
+    <div className="flex items-center space-x-3">
+      <Checkbox id="terms" defaultChecked />
+      <label htmlFor="terms" className="text-sm font-medium leading-none cursor-pointer">
+        Rastreamento de analytics ativado
+      </label>
+    </div>
+
+    <div className="space-y-2">
+      <label className="text-xs font-semibold text-muted-foreground">Formato do QR Code</label>
+      <RadioGroup defaultValue="png">
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="png" id="r1" />
+          <label htmlFor="r1" className="text-sm cursor-pointer">Imagem PNG</label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="svg" id="r2" />
+          <label htmlFor="r2" className="text-sm cursor-pointer">Vetor SVG</label>
+        </div>
+      </RadioGroup>
+    </div>
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Checkbox } from "@/components/ui/checkbox"
+
+export function CheckboxDemo() {
+  return (
+    <div className="flex items-center space-x-2">
+      <Checkbox id="terms" />
+      <label htmlFor="terms">Ativar rastreamento</label>
+    </div>
+  )
+}
+```

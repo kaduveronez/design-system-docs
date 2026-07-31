@@ -5,4 +5,29 @@ description: Barra de progresso de processos assíncronos.
 
 # Progress
 
-Indica visualmente a porcentagem de conclusão de uma tarefa.
+Indica visualmente a porcentagem de conclusão de uma tarefa de longa duração.
+
+import { Progress } from '@/components/ui/progress'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import { Progress } from "@/components/ui/progress"\n\nexport function ProgressDemo() {\n  return <Progress value={60} className="w-[60%]" />\n}`}>
+  <div className="w-full max-w-sm space-y-2">
+    <div className="flex justify-between text-xs text-muted-foreground">
+      <span>Gerando lote de QR Codes em alta definição</span>
+      <span className="font-mono font-semibold text-primary">65%</span>
+    </div>
+    <Progress value={65} className="w-full" />
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Progress } from "@/components/ui/progress"
+
+export function ProgressDemo() {
+  return <Progress value={65} />
+}
+```

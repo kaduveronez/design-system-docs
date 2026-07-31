@@ -1,8 +1,65 @@
 ---
-title: Navigation Menu
-description: Menus de cabeçalho complexos com submenus flutuantes.
+title: Navigation Menu / Menubar
+description: Menus de cabeçalho e barras de ferramentas.
 ---
 
-# Navigation Menu
+# Navigation Menu & Menubar
 
-Estrutura de menu principal para cabeçalhos de aplicativos e sites.
+Estrutura de menu principal para cabeçalhos e sistemas de navegação superior.
+
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarTrigger,
+} from '@/components/ui/menubar'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import {\n  Menubar,\n  MenubarContent,\n  MenubarItem,\n  MenubarMenu,\n  MenubarSeparator,\n  MenubarTrigger,\n} from "@/components/ui/menubar"\n\nexport function MenubarDemo() {\n  return (\n    <Menubar>\n      <MenubarMenu>\n        <MenubarTrigger>Arquivo</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>Novo QR Code</MenubarItem>\n          <MenubarSeparator />\n          <MenubarItem>Exportar SVG</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n    </Menubar>\n  )\n}`}>
+  <Menubar>
+    <MenubarMenu>
+      <MenubarTrigger>Arquivo</MenubarTrigger>
+      <MenubarContent>
+        <MenubarItem>Criar Novo QR Code</MenubarItem>
+        <MenubarSeparator />
+        <MenubarItem>Exportar PNG</MenubarItem>
+        <MenubarItem>Exportar SVG Vetorial</MenubarItem>
+      </MenubarContent>
+    </MenubarMenu>
+
+    <MenubarMenu>
+      <MenubarTrigger>Editar</MenubarTrigger>
+      <MenubarContent>
+        <MenubarItem>Desfazer Alteração</MenubarItem>
+        <MenubarItem>Refazer Alteração</MenubarItem>
+      </MenubarContent>
+    </MenubarMenu>
+
+    <MenubarMenu>
+      <MenubarTrigger>Ajuda</MenubarTrigger>
+      <MenubarContent>
+        <MenubarItem>Documentação do Design System</MenubarItem>
+      </MenubarContent>
+    </MenubarMenu>
+  </Menubar>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar"
+
+export function MenubarDemo() {
+  return (
+    <Menubar>
+      <MenubarMenu>
+        <MenubarTrigger>Arquivo</MenubarTrigger>
+      </MenubarMenu>
+    </Menubar>
+  )
+}
+```

@@ -5,4 +5,37 @@ description: Carrossel deslizante para fotos, cartões e mídias.
 
 # Carousel
 
-Deslizador horizontal para navegação em sequência.
+Deslizador horizontal para navegação em sequência de itens ou cartões.
+
+import { Card, CardContent } from '@/components/ui/card'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`export function CarouselDemo() {\n  return (\n    <div className="flex gap-4 overflow-x-auto p-2">\n      <Card className="w-48 shrink-0"><CardContent className="p-6">Slide 1</CardContent></Card>\n      <Card className="w-48 shrink-0"><CardContent className="p-6">Slide 2</CardContent></Card>\n    </div>\n  )\n}`}>
+  <div className="flex gap-4 overflow-x-auto max-w-md p-2">
+    <Card className="w-40 shrink-0 border border-border shadow-sm">
+      <CardContent className="p-6 text-center font-bold text-sm text-primary">QR Code 1</CardContent>
+    </Card>
+    <Card className="w-40 shrink-0 border border-border shadow-sm">
+      <CardContent className="p-6 text-center font-bold text-sm text-primary">QR Code 2</CardContent>
+    </Card>
+    <Card className="w-40 shrink-0 border border-border shadow-sm">
+      <CardContent className="p-6 text-center font-bold text-sm text-primary">QR Code 3</CardContent>
+    </Card>
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Card, CardContent } from "@/components/ui/card"
+
+export function CarouselDemo() {
+  return (
+    <div className="flex gap-4 overflow-x-auto">
+      <Card className="w-48 shrink-0"><CardContent className="p-4">Item</CardContent></Card>
+    </div>
+  )
+}
+```

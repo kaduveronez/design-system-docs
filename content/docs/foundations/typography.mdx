@@ -1,25 +1,48 @@
 ---
 title: Tipografia
-description: Escalas tipográficas, pesos e famílias de fonte do Gen QRcode Design System.
+description: Escala de fontes, pesos e tipografia da plataforma Gen QRcode.
 ---
 
 # Tipografia
 
-O Gen QRcode utiliza a família **Inter** para a maioria dos textos de interface e fontes mono-espaçadas para código.
+Escalas tipográficas e estilos oficiais de texto da plataforma Gen QRcode.
 
-## Escala de Tamanhos
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
-<div className="space-y-4 p-6 border border-border rounded-xl bg-card shadow-sm mt-6">
-  <div>
-    <span className="text-xs text-muted-foreground">Heading 1 (text-4xl)</span>
-    <h1 className="text-4xl font-bold tracking-tight">Gen QRcode Platform</h1>
+## Preview Interativo
+
+<ComponentPreview code={`export function TipografiaDemo() {\n  return (\n    <div className="space-y-4">\n      <h1 className="text-4xl font-bold tracking-tight">Gen QRcode Title 1</h1>\n      <h2 className="text-2xl font-semibold">Subtítulo Gen QRcode</h2>\n      <p className="text-base text-foreground">Texto de parágrafo padrão.</p>\n      <p className="text-sm text-muted-foreground">Texto de legenda secundária.</p>\n    </div>\n  )\n}`}>
+  <div className="space-y-4 w-full max-w-md text-left">
+    <div>
+      <span className="text-xs text-muted-foreground font-mono">h1 (text-4xl font-bold)</span>
+      <h1 className="text-4xl font-bold tracking-tight text-foreground">Gen QRcode Platform</h1>
+    </div>
+    <div>
+      <span className="text-xs text-muted-foreground font-mono">h2 (text-2xl font-semibold)</span>
+      <h2 className="text-2xl font-semibold text-foreground">Gerenciador de QR Codes</h2>
+    </div>
+    <div>
+      <span className="text-xs text-muted-foreground font-mono">p (text-base)</span>
+      <p className="text-base text-foreground">Crie e personalize seus QR codes com alta definição e suporte dinâmico.</p>
+    </div>
+    <div>
+      <span className="text-xs text-muted-foreground font-mono">caption (text-sm text-muted-foreground)</span>
+      <p className="text-sm text-muted-foreground">Última atualização realizada há 5 minutos.</p>
+    </div>
   </div>
-  <div>
-    <span className="text-xs text-muted-foreground">Heading 2 (text-2xl)</span>
-    <h2 className="text-2xl font-semibold">Gerenciador de QR Codes</h2>
-  </div>
-  <div>
-    <span className="text-xs text-muted-foreground">Body Regular (text-base)</span>
-    <p className="text-base text-foreground">Crie e personalize seus QR codes com alta definição e suporte dinâmico.</p>
-  </div>
-</div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+export function TipografiaDemo() {
+  return (
+    <div className="space-y-4">
+      <h1 className="text-4xl font-bold tracking-tight">Gen QRcode Title 1</h1>
+      <h2 className="text-2xl font-semibold">Subtítulo Gen QRcode</h2>
+      <p className="text-base text-foreground">Texto de parágrafo padrão.</p>
+      <p className="text-sm text-muted-foreground">Texto de legenda secundária.</p>
+    </div>
+  )
+}
+```

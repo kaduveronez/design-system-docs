@@ -5,4 +5,44 @@ description: Pequenas dicas de texto ao passar o cursor sobre botões ou ícones
 
 # Tooltip
 
-Rótulo curto que fornece contexto adicional ao sobrevoar um elemento.
+Rótulo curto que fornece texto explicativo ao passar o cursor do mouse sobre um elemento.
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
+import { Button } from '@/components/ui/button'
+import { Copy } from 'lucide-react'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from "@/components/ui/tooltip"\nimport { Button } from "@/components/ui/button"\n\nexport function TooltipDemo() {\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button variant="outline">Passe o mouse aqui</Button>\n      </TooltipTrigger>\n      <TooltipContent>\n        <p>Copiar código para a área de transferência</p>\n      </TooltipContent>\n    </Tooltip>\n  )\n}`}>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="outline" size="icon">
+        <Copy className="h-4 w-4" />
+      </Button>
+    </TooltipTrigger>
+    <TooltipContent>
+      <p className="text-xs font-medium">Copiar link do QR Code</p>
+    </TooltipContent>
+  </Tooltip>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { Button } from "@/components/ui/button"
+
+export function TooltipDemo() {
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild><Button variant="outline">Passe o mouse</Button></TooltipTrigger>
+      <TooltipContent><p>Dica explicativa</p></TooltipContent>
+    </Tooltip>
+  )
+}
+```

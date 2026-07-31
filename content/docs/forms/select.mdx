@@ -1,8 +1,53 @@
 ---
 title: Select
-description: Caixas de seleção suspensa e seletores.
+description: Caixas de seleção suspensa.
 ---
 
-# Select & Combobox
+# Select
 
-Menu suspenso para escolha de itens de uma lista.
+Exibe um menu suspenso de opções para escolha do usuário.
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from "@/components/ui/select"\n\nexport function SelectDemo() {\n  return (\n    <Select>\n      <SelectTrigger className="w-[180px]">\n        <SelectValue placeholder="Tipo de QR Code" />\n      </SelectTrigger>\n      <SelectContent>\n        <SelectItem value="url">URL Web</SelectItem>\n        <SelectItem value="wifi">Rede Wi-Fi</SelectItem>\n        <SelectItem value="vcard">Cartão VCard</SelectItem>\n      </SelectContent>\n    </Select>\n  )\n}`}>
+  <Select defaultValue="url">
+    <SelectTrigger className="w-[220px]">
+      <SelectValue placeholder="Tipo de QR Code" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="url">Link / URL Web</SelectItem>
+      <SelectItem value="wifi">Rede Wi-Fi</SelectItem>
+      <SelectItem value="vcard">Cartão VCard Profissional</SelectItem>
+      <SelectItem value="pix">Chave Pix Pagamento</SelectItem>
+    </SelectContent>
+  </Select>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
+export function SelectDemo() {
+  return (
+    <Select>
+      <SelectTrigger className="w-[180px]">
+        <SelectValue placeholder="Tipo" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="url">URL Web</SelectItem>
+        <SelectItem value="vcard">VCard</SelectItem>
+      </SelectContent>
+    </Select>
+  )
+}
+```

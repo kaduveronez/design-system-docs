@@ -5,4 +5,54 @@ description: Painel lateral expansível para formulários e configurações.
 
 # Sheet
 
-Painel que desliza a partir das bordas da tela.
+Painel lateral (Drawer/Offcanvas) que desliza a partir da borda da tela.
+
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
+import { Button } from '@/components/ui/button'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import {\n  Sheet,\n  SheetContent,\n  SheetDescription,\n  SheetHeader,\n  SheetTitle,\n  SheetTrigger,\n} from "@/components/ui/sheet"\nimport { Button } from "@/components/ui/button"\n\nexport function SheetDemo() {\n  return (\n    <Sheet>\n      <SheetTrigger asChild>\n        <Button variant="outline">Abrir Painel Lateral</Button>\n      </SheetTrigger>\n      <SheetContent>\n        <SheetHeader>\n          <SheetTitle>Configurações do QR Code</SheetTitle>\n          <SheetDescription>\n            Personalize cores e logotipo.\n          </SheetDescription>\n        </SheetHeader>\n      </SheetContent>\n    </Sheet>\n  )\n}`}>
+  <Sheet>
+    <SheetTrigger asChild>
+      <Button variant="outline">Abrir Painel de Configurações</Button>
+    </SheetTrigger>
+    <SheetContent>
+      <SheetHeader>
+        <SheetTitle>Configurações do Gen QRcode</SheetTitle>
+        <SheetDescription>
+          Ajuste as propriedades visuais da sua imagem vetorizada.
+        </SheetDescription>
+      </SheetHeader>
+      <div className="py-6 space-y-4 text-xs">
+        <p className="text-muted-foreground">Personalização de cor do módulo e logotipo de centro.</p>
+      </div>
+    </SheetContent>
+  </Sheet>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button"
+
+export function SheetDemo() {
+  return (
+    <Sheet>
+      <SheetTrigger asChild><Button variant="outline">Painel</Button></SheetTrigger>
+      <SheetContent>
+        <SheetHeader><SheetTitle>Configurações</SheetTitle></SheetHeader>
+      </SheetContent>
+    </Sheet>
+  )
+}
+```

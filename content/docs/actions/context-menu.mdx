@@ -5,4 +5,40 @@ description: Menu de contexto acionado via clique com o botão direito.
 
 # Context Menu
 
-Permite exibir um menu flutuante em resposta a um clique com botão direito do mouse.
+Exibe um menu de opções em resposta ao clique com o botão direito do mouse em uma área demarcada.
+
+import { Button } from '@/components/ui/button'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`export function ContextMenuDemo() {\n  return (\n    <div className="flex h-[150px] w-full items-center justify-center rounded-md border border-dashed border-border text-sm text-muted-foreground">\n      Clique com o botão direito aqui\n    </div>\n  )\n}`}>
+  <div className="flex h-[150px] w-full max-w-sm items-center justify-center rounded-xl border-2 border-dashed border-border bg-muted/30 text-sm font-medium text-muted-foreground select-none">
+    Clique com o botão direito nesta área
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu"
+
+export function ContextMenuDemo() {
+  return (
+    <ContextMenu>
+      <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">
+        Clique com o botão direito aqui
+      </ContextMenuTrigger>
+      <ContextMenuContent>
+        <ContextMenuItem>Copiar URL</ContextMenuItem>
+        <ContextMenuItem>Baixar QR Code PNG</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+  )
+}
+```

@@ -5,12 +5,28 @@ description: Etiquetas de status e marcadores curtos.
 
 # Badge
 
-Exibe rótulos visuais para indicar estados, categorias ou contagens.
+Exibe rótulos visuais curtos para indicar estados ou contagens.
 
-## Preview Visual
+import { Badge } from '@/components/ui/badge'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
-<div className="flex items-center justify-center gap-3 p-6 border border-border rounded-xl bg-card shadow-sm">
-  <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary text-primary-foreground">Ativo</span>
-  <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary text-secondary-foreground">Pendente</span>
-  <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-destructive text-destructive-foreground">Erro</span>
-</div>
+## Preview Interativo
+
+<ComponentPreview code={`import { Badge } from "@/components/ui/badge"\n\nexport function BadgeDemo() {\n  return (\n    <div className="flex gap-2">\n      <Badge variant="default">Ativo</Badge>\n      <Badge variant="secondary">Secundário</Badge>\n      <Badge variant="destructive">Erro</Badge>\n      <Badge variant="outline">Contorno</Badge>\n    </div>\n  )\n}`}>
+  <div className="flex flex-wrap items-center justify-center gap-3">
+    <Badge variant="default" className="bg-primary text-primary-foreground">Ativo</Badge>
+    <Badge variant="secondary">Pendente</Badge>
+    <Badge variant="destructive">Excluído</Badge>
+    <Badge variant="outline">Rascunho</Badge>
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Badge } from "@/components/ui/badge"
+
+export function BadgeDemo() {
+  return <Badge variant="default">Ativo</Badge>
+}
+```

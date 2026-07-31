@@ -5,4 +5,28 @@ description: Alternador de estado liga/desliga.
 
 # Switch
 
-Botão de alternância para ligar ou desligar configurações.
+Botão de alternância para controle booleano de configurações.
+
+import { Switch } from '@/components/ui/switch'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import { Switch } from "@/components/ui/switch"\n\nexport function SwitchDemo() {\n  return (\n    <div className="flex items-center space-x-2">\n      <Switch id="airplane-mode" />\n      <label htmlFor="airplane-mode">QR Code Dinâmico</label>\n    </div>\n  )\n}`}>
+  <div className="flex items-center space-x-3">
+    <Switch id="dynamic-qr" defaultChecked />
+    <label htmlFor="dynamic-qr" className="text-sm font-medium cursor-pointer">
+      Ativar redirecionamento dinâmico de URL
+    </label>
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Switch } from "@/components/ui/switch"
+
+export function SwitchDemo() {
+  return <Switch defaultChecked />
+}
+```

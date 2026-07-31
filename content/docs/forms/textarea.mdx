@@ -5,4 +5,26 @@ description: Campo para entrada de textos longos e descrições.
 
 # Textarea
 
-Permite a entrada de múltiplas linhas de texto.
+Permite a digitação de múltiplas linhas de texto.
+
+import { Textarea } from '@/components/ui/textarea'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import { Textarea } from "@/components/ui/textarea"\n\nexport function TextareaDemo() {\n  return <Textarea placeholder="Digite a descrição ou conteúdo do vCard para o QR Code..." />\n}`}>
+  <div className="w-full max-w-sm space-y-2">
+    <label className="text-xs font-medium text-muted-foreground">Conteúdo Dinâmico</label>
+    <Textarea placeholder="Digite a descrição ou conteúdo do vCard para o QR Code..." />
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Textarea } from "@/components/ui/textarea"
+
+export function TextareaDemo() {
+  return <Textarea placeholder="Digite a descrição..." />
+}
+```

@@ -5,24 +5,26 @@ description: Campo de entrada de texto padrão do Gen QRcode.
 
 # Input
 
-Componente básico para coleta de dados textuais.
+Componente básico para entrada de dados textuais.
 
-## Preview Visual
+import { Input } from '@/components/ui/input'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
-<div className="p-8 border border-border rounded-xl bg-card shadow-sm max-w-md mx-auto space-y-4">
-  <input 
-    type="text" 
-    placeholder="Digite a URL do seu QR Code..." 
-    className="w-full px-3 py-2 rounded-lg border border-input bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-  />
-</div>
+## Preview Interativo
 
-## Código para Implementação
+<ComponentPreview code={`import { Input } from "@/components/ui/input"\n\nexport function InputDemo() {\n  return <Input type="text" placeholder="https://genqrcode.com/meu-link" />\n}`}>
+  <div className="w-full max-w-sm space-y-2">
+    <label className="text-xs font-medium text-muted-foreground">URL do QR Code</label>
+    <Input type="text" placeholder="https://genqrcode.com/meu-link" />
+  </div>
+</ComponentPreview>
+
+## Código Manual
 
 ```tsx
 import { Input } from "@/components/ui/input"
 
 export function InputDemo() {
-  return <Input type="text" placeholder="Digite a URL..." />
+  return <Input type="text" placeholder="https://genqrcode.com/meu-link" />
 }
 ```

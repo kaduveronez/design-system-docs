@@ -1,52 +1,32 @@
 ---
-title: Cores
-description: Paleta de cores oficial e tokens do Gen QRcode Design System.
+title: Cores da Marca
+description: Clique em qualquer cor abaixo para copiar a variável CSS correspondente para uso no Tailwind ou CSS.
 ---
 
-# Cores
+# Cores da Marca
 
-A paleta de cores do Gen QRcode foi projetada para garantir alto contraste, elegância e suporte nativo a temas Light e Dark.
+Clique em qualquer cor abaixo para copiar a variável CSS correspondente para a área de transferência.
 
-## Paleta Principal (Light Mode)
+import { ColorBox } from '@/components/docs/ColorBox'
 
-<div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
-  <div className="p-4 rounded-xl border border-border shadow-sm space-y-2">
-    <div className="h-16 rounded-lg bg-[#644a40]" />
-    <p className="font-medium text-xs">Primary</p>
-    <code className="text-[10px] text-muted-foreground">#644a40</code>
-  </div>
+## Paleta Principal & Fundos (Light Mode)
 
-  <div className="p-4 rounded-xl border border-border shadow-sm space-y-2">
-    <div className="h-16 rounded-lg bg-[#ffdfb5] border border-border" />
-    <p className="font-medium text-xs">Secondary</p>
-    <code className="text-[10px] text-muted-foreground">#ffdfb5</code>
-  </div>
-
-  <div className="p-4 rounded-xl border border-border shadow-sm space-y-2">
-    <div className="h-16 rounded-lg bg-[#f9f9f9] border border-border" />
-    <p className="font-medium text-xs">Background</p>
-    <code className="text-[10px] text-muted-foreground">#f9f9f9</code>
-  </div>
-
-  <div className="p-4 rounded-xl border border-border shadow-sm space-y-2">
-    <div className="h-16 rounded-lg bg-[#202020]" />
-    <p className="font-medium text-xs">Foreground</p>
-    <code className="text-[10px] text-muted-foreground">#202020</code>
-  </div>
+<div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
+  <ColorBox hex="#644a40" name="Primary" variable="--primary"/>
+  <ColorBox hex="#ffdfb5" name="Secondary" variable="--secondary"/>
+  <ColorBox hex="#f9f9f9" name="Background" variable="--background"/>
+  <ColorBox hex="#202020" name="Foreground" variable="--foreground"/>
+  <ColorBox hex="#fcfcfc" name="Card" variable="--card"/>
+  <ColorBox hex="#efefef" name="Muted" variable="--muted"/>
+  <ColorBox hex="#e8e8e8" name="Accent" variable="--accent"/>
+  <ColorBox hex="#e54d2e" name="Destructive" variable="--destructive"/>
 </div>
 
-## Dark Mode
+## Componentes da Sidebar & Gráficos
 
-<div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
-  <div className="p-4 rounded-xl border border-border bg-black shadow-sm space-y-2">
-    <div className="h-16 rounded-lg bg-[#ffe0c2]" />
-    <p className="font-medium text-xs text-white">Primary (Dark)</p>
-    <code className="text-[10px] text-gray-400">#ffe0c2</code>
-  </div>
-
-  <div className="p-4 rounded-xl border border-border bg-black shadow-sm space-y-2">
-    <div className="h-16 rounded-lg bg-[#111111] border border-gray-800" />
-    <p className="font-medium text-xs text-white">Background (Dark)</p>
-    <code className="text-[10px] text-gray-400">#111111</code>
-  </div>
+<div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
+  <ColorBox hex="#fbfbfb" name="Sidebar" variable="--sidebar"/>
+  <ColorBox hex="#343434" name="Sidebar Primary" variable="--sidebar-primary"/>
+  <ColorBox hex="#d8d8d8" name="Border" variable="--border"/>
+  <ColorBox hex="#644a40" name="Ring" variable="--ring"/>
 </div>

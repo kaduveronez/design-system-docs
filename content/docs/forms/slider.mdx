@@ -5,4 +5,29 @@ description: Controle deslizante para seleção de intervalo numérico.
 
 # Slider
 
-Permite que o usuário selecione um valor em um intervalo contínuo.
+Permite a seleção de valores em um intervalo contínuo.
+
+import { Slider } from '@/components/ui/slider'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import { Slider } from "@/components/ui/slider"\n\nexport function SliderDemo() {\n  return <Slider defaultValue={[30]} max={100} step={1} />\n}`}>
+  <div className="w-full max-w-sm space-y-3">
+    <div className="flex justify-between text-xs text-muted-foreground">
+      <span>Tamanho da Borda</span>
+      <span className="font-mono">1024 px</span>
+    </div>
+    <Slider defaultValue={[50]} max={100} step={1} className="w-full" />
+  </div>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { Slider } from "@/components/ui/slider"
+
+export function SliderDemo() {
+  return <Slider defaultValue={[50]} max={100} step={1} />
+}
+```

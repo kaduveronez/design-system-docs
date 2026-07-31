@@ -5,4 +5,58 @@ description: Modal de confirmação para ações destrutivas ou críticas.
 
 # Alert Dialog
 
-Interrompe o fluxo para solicitar confirmação direta do usuário.
+Interrompe o fluxo de trabalho para solicitar confirmação explícita do usuário.
+
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog'
+import { Button } from '@/components/ui/button'
+import { ComponentPreview } from '@/components/docs/ComponentPreview'
+
+## Preview Interativo
+
+<ComponentPreview code={`import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from "@/components/ui/alert-dialog"\nimport { Button } from "@/components/ui/button"\n\nexport function AlertDialogDemo() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger asChild>\n        <Button variant="destructive">Excluir QR Code</Button>\n      </AlertDialogTrigger>\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Tem certeza absoluta?</AlertDialogTitle>\n          <AlertDialogDescription>\n            Esta ação não pode ser desfeita. O QR Code deixará de funcionar imediatamente.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogCancel>Cancelar</AlertDialogCancel>\n          <AlertDialogAction>Confirmar Exclusão</AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  )\n}`}>
+  <AlertDialog>
+    <AlertDialogTrigger asChild>
+      <Button variant="destructive">Excluir QR Code</Button>
+    </AlertDialogTrigger>
+    <AlertDialogContent>
+      <AlertDialogHeader>
+        <AlertDialogTitle>Tem certeza absoluta?</AlertDialogTitle>
+        <AlertDialogDescription>
+          Esta ação não pode ser desfeita. O QR Code será removido permanentemente de nossos servidores.
+        </AlertDialogDescription>
+      </AlertDialogHeader>
+      <AlertDialogFooter>
+        <AlertDialogCancel>Cancelar</AlertDialogCancel>
+        <AlertDialogAction className="bg-destructive text-destructive-foreground">Confirmar Exclusão</AlertDialogAction>
+      </AlertDialogFooter>
+    </AlertDialogContent>
+  </AlertDialog>
+</ComponentPreview>
+
+## Código Manual
+
+```tsx
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogTrigger } from "@/components/ui/alert-dialog"
+import { Button } from "@/components/ui/button"
+
+export function AlertDialogDemo() {
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger asChild><Button variant="destructive">Excluir</Button></AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogAction>Confirmar</AlertDialogAction>
+      </AlertDialogContent>
+    </AlertDialog>
+  )
+}
+```
