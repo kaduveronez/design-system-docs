@@ -1,10 +1,17 @@
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
 import { source } from '@/lib/source';
+import { ThemeToggle } from '@/components/docs/ThemeToggle';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <DocsLayout tree={source.pageTree} nav={{ title: 'Gen QRcode Design System' }}>
+    <DocsLayout
+      tree={source.pageTree}
+      nav={{
+        title: 'Gen QRcode Design System',
+        children: <ThemeToggle />,
+      }}
+    >
       {children}
     </DocsLayout>
   );

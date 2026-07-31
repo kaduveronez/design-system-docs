@@ -1,10 +1,15 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/docs/ThemeToggle';
 import { ArrowRight, BookOpen, Layers, Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 text-center">
+    <div className="relative flex min-h-screen flex-col items-center justify-center bg-background px-6 text-center">
+      <div className="absolute top-6 right-6">
+        <ThemeToggle />
+      </div>
+
       <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground shadow-sm mb-8">
         <Sparkles className="h-3.5 w-3.5 text-primary" />
         Gen QRcode Design System
@@ -36,7 +41,7 @@ export default function HomePage() {
           <Layers className="h-6 w-6 text-primary mb-3" />
           <h3 className="font-semibold text-foreground">Tailwind CSS v4</h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            Sintaxe moderna com tokens customizados de tema dark e light da marca Gen QRcode.
+            Sintaxe moderna com suporte total a alternância entre tema claro e escuro.
           </p>
         </div>
 
