@@ -29,7 +29,7 @@ function AvatarImage({ className, ...props }: AvatarPrimitive.Image.Props) {
     <AvatarPrimitive.Image
       data-slot="avatar-image"
       className={cn(
-        "aspect-square size-full rounded-full object-cover",
+        "aspect-square size-full rounded-full object-cover z-0",
         className
       )}
       {...props}
@@ -45,7 +45,7 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-        "flex size-full items-center justify-center rounded-full bg-muted font-semibold text-muted-foreground text-sm group-data-[size=sm]/avatar:text-xs",
+        "absolute inset-0 z-0 flex size-full items-center justify-center rounded-full bg-muted font-semibold text-muted-foreground text-sm group-data-[size=sm]/avatar:text-xs",
         className
       )}
       {...props}
@@ -58,7 +58,7 @@ function AvatarBadge({ className, ...props }: React.ComponentProps<"span">) {
     <span
       data-slot="avatar-badge"
       className={cn(
-        "absolute -right-0.5 -bottom-0.5 z-10 block rounded-full ring-2 ring-background bg-green-500 size-3 shrink-0",
+        "absolute right-0 bottom-0 z-10 block rounded-full ring-2 ring-background bg-green-500 size-3 shrink-0",
         className
       )}
       {...props}
