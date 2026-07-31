@@ -5,7 +5,7 @@ description: Menu suspenso para exibição de ações secundárias.
 
 # Dropdown Menu
 
-Exibe um menu suspenso de ações quando acionado.
+Exibe um menu suspenso de ações em resposta ao clique de um gatilho.
 
 import { Button } from '@/components/ui/button'
 import {
@@ -20,22 +20,19 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from "@/components/ui/dropdown-menu"\nimport { Button } from "@/components/ui/button"\n\nexport function DropdownDemo() {\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button variant="outline">Abrir Menu</Button>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent>\n        <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>\n        <DropdownMenuSeparator />\n        <DropdownMenuItem>Perfil</DropdownMenuItem>\n        <DropdownMenuItem>QR Codes</DropdownMenuItem>\n        <DropdownMenuItem>Configurações</DropdownMenuItem>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  )\n}`}>
+Clique no botão abaixo para abrir o menu suspenso interativo:
+
+<ComponentPreview code={`import {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from "@/components/ui/dropdown-menu"\nimport { Button } from "@/components/ui/button"\n\nexport function DropdownDemo() {\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger render={<Button variant="outline">Abrir Menu</Button>} />\n      <DropdownMenuContent>\n        <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>\n        <DropdownMenuSeparator />\n        <DropdownMenuItem>Gerenciar Perfil</DropdownMenuItem>\n        <DropdownMenuItem>Meus QR Codes</DropdownMenuItem>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  )\n}`}>
   <DropdownMenu>
-    <DropdownMenuTrigger asChild>
-      <Button variant="outline">Abrir Menu Opções</Button>
-    </DropdownMenuTrigger>
+    <DropdownMenuTrigger render={<Button variant="outline">Abrir Menu Opções</Button>} />
     <DropdownMenuContent className="w-56">
       <DropdownMenuLabel>Minha Conta Gen QRcode</DropdownMenuLabel>
       <DropdownMenuSeparator />
       <DropdownMenuItem>Gerenciar Perfil</DropdownMenuItem>
-
-      <DropdownMenuItem>Meus QR Codes</DropdownMenuItem>
-
+      <DropdownMenuItem>Meus QR Codes Dinâmicos</DropdownMenuItem>
       <DropdownMenuItem>Estatísticas de Acesso</DropdownMenuItem>
-
       <DropdownMenuSeparator />
-      <DropdownMenuItem className="text-destructive font-medium">Sair da Conta</DropdownMenuItem>
+      <DropdownMenuItem variant="destructive">Sair da Conta</DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 </ComponentPreview>
@@ -56,9 +53,7 @@ import { Button } from "@/components/ui/button"
 export function DropdownDemo() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Abrir Menu</Button>
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline">Abrir Menu</Button>} />
       <DropdownMenuContent>
         <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
         <DropdownMenuSeparator />

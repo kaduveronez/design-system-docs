@@ -18,13 +18,15 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from "@/components/ui/tooltip"\nimport { Button } from "@/components/ui/button"\n\nexport function TooltipDemo() {\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button variant="outline">Passe o mouse aqui</Button>\n      </TooltipTrigger>\n      <TooltipContent>\n        <p>Copiar código para a área de transferência</p>\n      </TooltipContent>\n    </Tooltip>\n  )\n}`}>
+Passe o mouse sobre o botão para visualizar a dica flutuante interativa:
+
+<ComponentPreview code={`import {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from "@/components/ui/tooltip"\nimport { Button } from "@/components/ui/button"\nimport { Copy } from "lucide-react"\n\nexport function TooltipDemo() {\n  return (\n    <Tooltip>\n      <TooltipTrigger render={\n        <Button variant="outline" size="icon">\n          <Copy className="h-4 w-4" />\n        </Button>\n      } />\n      <TooltipContent>\n        <p>Copiar link do QR Code</p>\n      </TooltipContent>\n    </Tooltip>\n  )\n}`}>
   <Tooltip>
-    <TooltipTrigger asChild>
+    <TooltipTrigger render={
       <Button variant="outline" size="icon">
         <Copy className="h-4 w-4" />
       </Button>
-    </TooltipTrigger>
+    } />
     <TooltipContent>
       <p className="text-xs font-medium">Copiar link do QR Code</p>
     </TooltipContent>
@@ -37,10 +39,10 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
 
-export function TooltipDemo() {
+export function ExemploTooltip() {
   return (
     <Tooltip>
-      <TooltipTrigger asChild><Button variant="outline">Passe o mouse</Button></TooltipTrigger>
+      <TooltipTrigger render={<Button variant="outline">Passe o mouse</Button>} />
       <TooltipContent><p>Dica explicativa</p></TooltipContent>
     </Tooltip>
   )

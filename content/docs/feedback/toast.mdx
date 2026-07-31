@@ -1,26 +1,21 @@
 ---
 title: Toast / Sonner
-description: Notificações flutuantes temporárias.
+description: Notificações flutuantes temporárias e interativas.
 ---
 
 # Toast & Sonner
 
-Mensagens temporárias que surgem na tela informando o resultado de uma operação.
+Mensagens flutuantes que surgem na tela informando o resultado de uma operação em tempo real.
 
-import { Button } from '@/components/ui/button'
+import { ToastDemo } from '@/components/docs/demos/ToastDemo'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import { Button } from "@/components/ui/button"\nimport { toast } from "sonner"\n\nexport function ToastDemo() {\n  return (\n    <Button onClick={() => toast("Link do QR Code copiado!")}>\n      Disparar Notificação Toast\n    </Button>\n  )\n}`}>
-  <div className="flex flex-col items-center gap-2">
-    <Button className="bg-primary text-primary-foreground">
-      Disparar Notificação Toast
-    </Button>
-    <div className="mt-4 p-3 rounded-lg border border-border bg-card shadow-md text-xs flex items-center gap-2 text-foreground">
-      <span>✔️ Link do QR Code copiado para a área de transferência!</span>
-    </div>
-  </div>
+Clique em qualquer botão abaixo para disparar a notificação flutuante real no canto superior direito da tela!
+
+<ComponentPreview code={`import { Button } from "@/components/ui/button"\nimport { toast } from "sonner"\n\nexport function ToastDemo() {\n  return (\n    <div className="flex gap-3">\n      <Button onClick={() => toast.success("QR Code salvo com sucesso!")}>\n        Disparar Sucesso\n      </Button>\n      <Button onClick={() => toast.error("Falha ao validar URL")}>\n        Disparar Erro\n      </Button>\n    </div>\n  )\n}`}>
+  <ToastDemo />
 </ComponentPreview>
 
 ## Código Manual
@@ -29,9 +24,9 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 
-export function ToastDemo() {
+export function ExemploToast() {
   return (
-    <Button onClick={() => toast("Link copiado com sucesso!")}>
+    <Button onClick={() => toast.success("Link copiado com sucesso!")}>
       Copiar Link
     </Button>
   )

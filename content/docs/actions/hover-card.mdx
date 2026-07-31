@@ -17,18 +17,18 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import {\n  HoverCard,\n  HoverCardContent,\n  HoverCardTrigger,\n} from "@/components/ui/hover-card"\nimport { Button } from "@/components/ui/button"\n\nexport function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <HoverCardTrigger asChild>\n        <Button variant="link">@genqrcode</Button>\n      </HoverCardTrigger>\n      <HoverCardContent className="w-80">\n        <div className="space-y-1">\n          <h4 className="text-sm font-semibold">Gen QRcode Platform</h4>\n          <p className="text-sm text-muted-foreground">\n            Plataforma de criação e gerenciamento dinâmico de QR codes.\n          </p>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  )\n}`}>
+Passe o mouse sobre o botão para exibir o cartão flutuante de informações:
+
+<ComponentPreview code={`import {\n  HoverCard,\n  HoverCardContent,\n  HoverCardTrigger,\n} from "@/components/ui/hover-card"\nimport { Button } from "@/components/ui/button"\n\nexport function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <HoverCardTrigger render={<Button variant="link">@genqrcode</Button>} />\n      <HoverCardContent className="w-80">\n        <div className="space-y-1">\n          <h4 className="text-sm font-semibold">Gen QRcode Platform</h4>\n          <p className="text-sm text-muted-foreground">\n            Plataforma de criação e gerenciamento dinâmico de QR codes.\n          </p>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  )\n}`}>
   <HoverCard>
-    <HoverCardTrigger asChild>
-      <Button variant="link" className="text-primary font-semibold">@genqrcode</Button>
-    </HoverCardTrigger>
+    <HoverCardTrigger render={<Button variant="link" className="text-primary font-semibold text-base">@genqrcode</Button>} />
     <HoverCardContent className="w-80">
-      <div className="space-y-1">
-        <h4 className="text-sm font-semibold">Gen QRcode Platform</h4>
-        <p className="text-sm text-muted-foreground">
-          Plataforma de criação e gerenciamento dinâmico de QR codes com análise em tempo real.
+      <div className="space-y-1 p-1">
+        <h4 className="text-sm font-semibold text-foreground">Gen QRcode Platform</h4>
+        <p className="text-xs text-muted-foreground">
+          Plataforma de criação e gerenciamento dinâmico de QR codes com análise de acessos em tempo real.
         </p>
-        <div className="flex items-center pt-2 text-xs text-muted-foreground">
+        <div className="flex items-center pt-2 text-[10px] text-muted-foreground font-mono">
           Criado por Gen QRcode Team
         </div>
       </div>
@@ -45,9 +45,7 @@ import { Button } from "@/components/ui/button"
 export function HoverCardDemo() {
   return (
     <HoverCard>
-      <HoverCardTrigger asChild>
-        <Button variant="link">@genqrcode</Button>
-      </HoverCardTrigger>
+      <HoverCardTrigger render={<Button variant="link">@genqrcode</Button>} />
       <HoverCardContent>
         <p className="text-sm">Gen QRcode Platform</p>
       </HoverCardContent>

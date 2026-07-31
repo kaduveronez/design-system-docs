@@ -1,6 +1,7 @@
 import './globals.css';
 import { RootProvider } from 'fumadocs-ui/provider/next';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { Toaster } from 'sonner';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 
@@ -18,7 +19,10 @@ export default function Layout({ children }: { children: ReactNode }) {
     <html lang="pt-BR" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen bg-background text-foreground antialiased">
         <RootProvider>
-          <TooltipProvider>{children}</TooltipProvider>
+          <TooltipProvider>
+            {children}
+            <Toaster position="top-right" richColors />
+          </TooltipProvider>
         </RootProvider>
       </body>
     </html>

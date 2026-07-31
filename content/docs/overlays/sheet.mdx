@@ -1,42 +1,21 @@
 ---
 title: Sheet
-description: Painel lateral expansível para formulários e configurações.
+description: Painel lateral expansível e interativo para formulários e configurações.
 ---
 
 # Sheet
 
-Painel lateral (Drawer/Offcanvas) que desliza a partir da borda da tela.
+Painel lateral (Drawer/Offcanvas) que desliza suavemente a partir da borda da tela.
 
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet'
-import { Button } from '@/components/ui/button'
+import { SheetDemo } from '@/components/docs/demos/SheetDemo'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import {\n  Sheet,\n  SheetContent,\n  SheetDescription,\n  SheetHeader,\n  SheetTitle,\n  SheetTrigger,\n} from "@/components/ui/sheet"\nimport { Button } from "@/components/ui/button"\n\nexport function SheetDemo() {\n  return (\n    <Sheet>\n      <SheetTrigger asChild>\n        <Button variant="outline">Abrir Painel Lateral</Button>\n      </SheetTrigger>\n      <SheetContent>\n        <SheetHeader>\n          <SheetTitle>Configurações do QR Code</SheetTitle>\n          <SheetDescription>\n            Personalize cores e logotipo.\n          </SheetDescription>\n        </SheetHeader>\n      </SheetContent>\n    </Sheet>\n  )\n}`}>
-  <Sheet>
-    <SheetTrigger asChild>
-      <Button variant="outline">Abrir Painel de Configurações</Button>
-    </SheetTrigger>
-    <SheetContent>
-      <SheetHeader>
-        <SheetTitle>Configurações do Gen QRcode</SheetTitle>
-        <SheetDescription>
-          Ajuste as propriedades visuais da sua imagem vetorizada.
-        </SheetDescription>
-      </SheetHeader>
-      <div className="py-6 space-y-4 text-xs">
-        <p className="text-muted-foreground">Personalização de cor do módulo e logotipo de centro.</p>
-      </div>
-    </SheetContent>
-  </Sheet>
+Clique no botão abaixo para deslizar o painel lateral de configurações:
+
+<ComponentPreview code={`import {\n  Sheet,\n  SheetContent,\n  SheetDescription,\n  SheetHeader,\n  SheetTitle,\n  SheetTrigger,\n} from "@/components/ui/sheet"\nimport { Button } from "@/components/ui/button"\n\nexport function SheetDemo() {\n  return (\n    <Sheet>\n      <SheetTrigger asChild>\n        <Button variant="outline">Configurações</Button>\n      </SheetTrigger>\n      <SheetContent>\n        <SheetHeader>\n          <SheetTitle>Estilização do QR Code</SheetTitle>\n          <SheetDescription>\n            Personalize as propriedades visuais da imagem gerada.\n          </SheetDescription>\n        </SheetHeader>\n      </SheetContent>\n    </Sheet>\n  )\n}`}>
+  <SheetDemo />
 </ComponentPreview>
 
 ## Código Manual
@@ -45,7 +24,7 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 
-export function SheetDemo() {
+export function ExemploSheet() {
   return (
     <Sheet>
       <SheetTrigger asChild><Button variant="outline">Painel</Button></SheetTrigger>

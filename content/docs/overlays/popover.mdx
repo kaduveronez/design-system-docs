@@ -7,30 +7,15 @@ description: Balão com conteúdo rico ancorado a um elemento.
 
 Exibe conteúdo sobreposto ancorado diretamente a um elemento de gatilho.
 
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
-import { Button } from '@/components/ui/button'
+import { PopoverDemo } from '@/components/docs/demos/PopoverDemo'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from "@/components/ui/popover"\nimport { Button } from "@/components/ui/button"\n\nexport function PopoverDemo() {\n  return (\n    <Popover>\n      <PopoverTrigger asChild>\n        <Button variant="outline">Abrir Popover</Button>\n      </PopoverTrigger>\n      <PopoverContent>\n        <div className="space-y-2">\n          <h4 className="font-medium text-sm">Dimensões</h4>\n          <p className="text-xs text-muted-foreground">Defina a largura do contêiner.</p>\n        </div>\n      </PopoverContent>\n    </Popover>\n  )\n}`}>
-  <Popover>
-    <PopoverTrigger asChild>
-      <Button variant="outline">Abrir Popover Filtros</Button>
-    </PopoverTrigger>
-    <PopoverContent className="w-80">
-      <div className="space-y-2">
-        <h4 className="font-semibold text-sm">Filtros de QR Code</h4>
-        <p className="text-xs text-muted-foreground">
-          Filtre por tipo de campanha, data de criação ou quantidade de acessos.
-        </p>
-      </div>
-    </PopoverContent>
-  </Popover>
+Clique no botão para ancorar o balão de filtro interativo real:
+
+<ComponentPreview code={`import {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from "@/components/ui/popover"\nimport { Button } from "@/components/ui/button"\n\nexport function PopoverDemo() {\n  return (\n    <Popover>\n      <PopoverTrigger asChild>\n        <Button variant="outline">Filtros Avançados</Button>\n      </PopoverTrigger>\n      <PopoverContent className="w-80">\n        <div className="space-y-2">\n          <h4 className="font-semibold text-sm">Filtrar QR Codes</h4>\n        </div>\n      </PopoverContent>\n    </Popover>\n  )\n}`}>
+  <PopoverDemo />
 </ComponentPreview>
 
 ## Código Manual
@@ -39,7 +24,7 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
 
-export function PopoverDemo() {
+export function ExemploPopover() {
   return (
     <Popover>
       <PopoverTrigger asChild><Button variant="outline">Popover</Button></PopoverTrigger>
