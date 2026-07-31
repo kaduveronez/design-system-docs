@@ -7,34 +7,49 @@ description: Imagem de perfil do usuário com tratamento de fallback e indicativ
 
 Componente visual de imagem circular para perfis de usuários com fallback em iniciais e badge de status.
 
-import { Avatar, AvatarFallback, AvatarImage, AvatarBadge } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage, AvatarBadge, AvatarGroup } from '@/components/ui/avatar'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import { Avatar, AvatarFallback, AvatarImage, AvatarBadge } from "@/components/ui/avatar"\n\nexport function AvatarDemo() {\n  return (\n    <div className="flex items-center gap-4">\n      <Avatar size="lg">\n        <AvatarImage src="https://github.com/shadcn.png" alt="@genqrcode" />\n        <AvatarFallback>GQ</AvatarFallback>\n        <AvatarBadge className="bg-green-500" />\n      </Avatar>\n      <Avatar size="lg">\n        <AvatarFallback className="bg-primary text-primary-foreground font-bold">GQ</AvatarFallback>\n      </Avatar>\n    </div>\n  )\n}`}>
-  <div className="flex flex-wrap items-center justify-center gap-6">
-    <div className="flex flex-col items-center gap-2">
-      <Avatar size="lg" className="h-12 w-12 border border-border">
-        <AvatarImage src="https://github.com/shadcn.png" alt="@genqrcode" />
+<ComponentPreview code={`import { Avatar, AvatarFallback, AvatarImage, AvatarBadge, AvatarGroup } from "@/components/ui/avatar"\n\nexport function AvatarDemo() {\n  return (\n    <div className="flex items-center gap-6">\n      <Avatar size="lg">\n        <AvatarImage src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Avatar" />\n        <AvatarFallback>GQ</AvatarFallback>\n        <AvatarBadge className="bg-green-500" />\n      </Avatar>\n      <Avatar size="lg">\n        <AvatarFallback className="bg-primary text-primary-foreground font-bold">GQ</AvatarFallback>\n      </Avatar>\n      <AvatarGroup>\n        <Avatar size="sm"><AvatarFallback>A1</AvatarFallback></Avatar>\n        <Avatar size="sm"><AvatarFallback>A2</AvatarFallback></Avatar>\n      </AvatarGroup>\n    </div>\n  )\n}`}>
+  <div className="flex flex-wrap items-center justify-center gap-8 p-4">
+    <div className="flex flex-col items-center gap-3">
+      <Avatar size="lg">
+        <AvatarImage src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Avatar" />
         <AvatarFallback>GQ</AvatarFallback>
-        <AvatarBadge className="bg-green-500 h-3 w-3" />
+        <AvatarBadge className="bg-green-500" />
       </Avatar>
-      <span className="text-[10px] font-mono">Com Imagem + Status</span>
+      <span className="text-xs text-muted-foreground font-medium">Com Imagem + Status</span>
     </div>
 
-    <div className="flex flex-col items-center gap-2">
-      <Avatar size="lg" className="h-12 w-12 border border-border">
-        <AvatarFallback className="bg-primary text-primary-foreground font-bold text-sm">GQ</AvatarFallback>
+    <div className="flex flex-col items-center gap-3">
+      <Avatar size="lg">
+        <AvatarFallback className="bg-primary text-primary-foreground font-bold">GQ</AvatarFallback>
       </Avatar>
-      <span className="text-[10px] font-mono">Fallback Iniciais</span>
+      <span className="text-xs text-muted-foreground font-medium">Fallback Iniciais</span>
     </div>
 
-    <div className="flex flex-col items-center gap-2">
-      <Avatar size="sm" className="h-8 w-8 border border-border">
-        <AvatarFallback className="bg-secondary text-secondary-foreground font-bold text-xs">GQ</AvatarFallback>
+    <div className="flex flex-col items-center gap-3">
+      <Avatar size="sm">
+        <AvatarFallback className="bg-secondary text-secondary-foreground font-bold">GQ</AvatarFallback>
       </Avatar>
-      <span className="text-[10px] font-mono">Tamanho Pequeno (sm)</span>
+      <span className="text-xs text-muted-foreground font-medium">Tamanho Pequeno (sm)</span>
+    </div>
+
+    <div className="flex flex-col items-center gap-3">
+      <AvatarGroup>
+        <Avatar size="sm">
+          <AvatarFallback className="bg-primary text-primary-foreground font-bold">A1</AvatarFallback>
+        </Avatar>
+        <Avatar size="sm">
+          <AvatarFallback className="bg-secondary text-secondary-foreground font-bold">A2</AvatarFallback>
+        </Avatar>
+        <Avatar size="sm">
+          <AvatarFallback className="bg-muted text-muted-foreground font-bold">A3</AvatarFallback>
+        </Avatar>
+      </AvatarGroup>
+      <span className="text-xs text-muted-foreground font-medium">Grupo de Avatares</span>
     </div>
   </div>
 </ComponentPreview>
