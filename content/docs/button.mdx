@@ -1,0 +1,83 @@
+---
+title: Button
+description: O componente Button permite disparar ações ou navegar entre páginas com feedback visual claro e variantes estilizadas.
+---
+
+# Button
+
+O **Button** é o componente fundamental de interação na interface. Desenvolvido sobre o `shadcn/ui` e estilizado via **Tailwind CSS v4** com as variáveis do tema Geist.
+
+## Instalação
+
+Você pode instalar o componente `Button` via CLI do shadcn:
+
+```bash
+npx shadcn@latest add button
+```
+
+## Uso Básico
+
+Importe o componente e declare na sua aplicação:
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export default function Example() {
+  return <Button variant="default">Clique aqui</Button>
+}
+```
+
+## Variantes (Variants)
+
+O componente oferece diversas opções de estilo pré-configuradas:
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export function ButtonVariants() {
+  return (
+    <div className="flex flex-wrap gap-4">
+      <Button variant="default">Default</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="destructive">Destructive</Button>
+      <Button variant="link">Link</Button>
+    </div>
+  )
+}
+```
+
+## Tamanhos (Sizes)
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export function ButtonSizes() {
+  return (
+    <div className="flex items-center gap-4">
+      <Button size="sm">Small</Button>
+      <Button size="default">Default</Button>
+      <Button size="lg">Large</Button>
+      <Button size="icon">🚀</Button>
+    </div>
+  )
+}
+```
+
+## Estado Desabilitado (Disabled)
+
+```tsx
+<Button disabled variant="default">
+  Processando...
+</Button>
+```
+
+## Propriedades (Props)
+
+| Prop | Tipo | Padrão | Descrição |
+| :--- | :--- | :--- | :--- |
+| `variant` | `'default' \| 'destructive' \| 'outline' \| 'secondary' \| 'ghost' \| 'link'` | `'default'` | Define a variante de estilo visual do botão |
+| `size` | `'default' \| 'sm' \| 'lg' \| 'icon'` | `'default'` | Controla o tamanho e padding do botão |
+| `asChild` | `boolean` | `false` | Permite renderizar o elemento filho mantendo as variantes de estilo |
+| `disabled` | `boolean` | `false` | Desabilita interações de clique e altera a opacidade |
