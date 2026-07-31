@@ -1,52 +1,35 @@
 ---
-title: Iconografia
-description: Biblioteca de ícones padrão Lucide React do Gen QRcode.
+title: Iconografia (Phosphor Icons)
+description: Biblioteca oficial de ícones Phosphor Icons do Gen QRcode Design System.
 ---
 
-# Iconografia
+# Iconografia (Phosphor Icons)
 
-Ícones vetoriais padronizados para botões, sinalização e navegação.
+Biblioteca vetorial oficial do Gen QRcode Design System com suporte a 6 pesos visuais (`thin`, `light`, `regular`, `bold`, `fill`, `duotone`).
 
-import { QrCode, Sparkles, Check, Copy, ArrowRight, Settings } from 'lucide-react'
+import { PhosphorIconsDemo } from '@/components/docs/demos/PhosphorIconsDemo'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import { QrCode, Sparkles, Check, Copy, ArrowRight, Settings } from 'lucide-react'\n\nexport function IconesDemo() {\n  return (\n    <div className="flex gap-6">\n      <QrCode className="h-6 w-6 text-primary" />\n      <Sparkles className="h-6 w-6 text-primary" />\n      <Check className="h-6 w-6 text-green-600" />\n      <Copy className="h-6 w-6 text-foreground" />\n      <ArrowRight className="h-6 w-6 text-foreground" />\n      <Settings className="h-6 w-6 text-muted-foreground" />\n    </div>\n  )\n}`}>
-  <div className="flex flex-wrap items-center justify-center gap-6">
-    <div className="flex flex-col items-center gap-2">
-      <QrCode className="h-7 w-7 text-primary" />
-      <span className="text-[10px] font-mono">QrCode</span>
-    </div>
-    <div className="flex flex-col items-center gap-2">
-      <Sparkles className="h-7 w-7 text-primary" />
-      <span className="text-[10px] font-mono">Sparkles</span>
-    </div>
-    <div className="flex flex-col items-center gap-2">
-      <Check className="h-7 w-7 text-green-600" />
-      <span className="text-[10px] font-mono">Check</span>
-    </div>
-    <div className="flex flex-col items-center gap-2">
-      <Copy className="h-7 w-7 text-foreground" />
-      <span className="text-[10px] font-mono">Copy</span>
-    </div>
-    <div className="flex flex-col items-center gap-2">
-      <ArrowRight className="h-7 w-7 text-foreground" />
-      <span className="text-[10px] font-mono">ArrowRight</span>
-    </div>
-    <div className="flex flex-col items-center gap-2">
-      <Settings className="h-7 w-7 text-muted-foreground" />
-      <span className="text-[10px] font-mono">Settings</span>
-    </div>
-  </div>
+<ComponentPreview code={`import { QrCode, Sparkle, CheckCircle, Copy, ArrowRight, Gear } from '@phosphor-icons/react'\n\nexport function IconesDemo() {\n  return (\n    <div className="flex gap-6">\n      <QrCode size={32} weight="regular" className="text-primary" />\n      <Sparkle size={32} weight="fill" className="text-primary" />\n      <CheckCircle size={32} weight="duotone" className="text-green-600" />\n      <Copy size={32} weight="bold" />\n      <ArrowRight size={32} weight="regular" />\n      <Gear size={32} weight="duotone" className="text-muted-foreground" />\n    </div>\n  )\n}`}>
+  <PhosphorIconsDemo />
 </ComponentPreview>
 
-## Código Manual
+## Como Usar
+
+Instale o pacote `@phosphor-icons/react` e importe diretamente os ícones desejados:
 
 ```tsx
-import { QrCode, Sparkles, Check, Copy } from 'lucide-react'
+import { QrCode, Sparkle, CheckCircle } from '@phosphor-icons/react'
 
-export function IconesDemo() {
-  return <QrCode className="h-6 w-6 text-primary" />
+export function ExemploIcones() {
+  return (
+    <div className="flex gap-4">
+      <QrCode size={24} weight="regular" />
+      <Sparkle size={24} weight="fill" />
+      <CheckCircle size={24} weight="duotone" />
+    </div>
+  )
 }
 ```
