@@ -1,11 +1,11 @@
 ---
 title: Tooltip
-description: Pequenas dicas de texto ao passar o cursor sobre botões ou ícones.
+description: Pequenas dicas de texto ao passar o cursor sobre elementos com suporte às 4 direções.
 ---
 
 # Tooltip
 
-Rótulo curto que fornece texto explicativo ao passar o cursor do mouse sobre um elemento.
+Rótulo curto que fornece texto explicativo ao passar o cursor do mouse sobre um elemento (Topo, Baixo, Esquerda, Direita).
 
 import {
   Tooltip,
@@ -13,24 +13,50 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { Button } from '@/components/ui/button'
-import { Copy } from 'lucide-react'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
-## Preview Interativo
+## Preview Interativo (4 Direções)
 
-Passe o mouse sobre o botão para visualizar a dica flutuante interativa:
+Passe o cursor sobre os botões abaixo para visualizar os tooltips nas 4 posições (Topo, Baixo, Esquerda, Direita):
 
-<ComponentPreview code={`import {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from "@/components/ui/tooltip"\nimport { Button } from "@/components/ui/button"\nimport { Copy } from "lucide-react"\n\nexport function TooltipDemo() {\n  return (\n    <Tooltip>\n      <TooltipTrigger render={\n        <Button variant="outline" size="icon">\n          <Copy className="h-4 w-4" />\n        </Button>\n      } />\n      <TooltipContent>\n        <p>Copiar link do QR Code</p>\n      </TooltipContent>\n    </Tooltip>\n  )\n}`}>
-  <Tooltip>
-    <TooltipTrigger render={
-      <Button variant="outline" size="icon">
-        <Copy className="h-4 w-4" />
-      </Button>
-    } />
-    <TooltipContent>
-      <p className="text-xs font-medium">Copiar link do QR Code</p>
-    </TooltipContent>
-  </Tooltip>
+<ComponentPreview code={`import {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from "@/components/ui/tooltip"\nimport { Button } from "@/components/ui/button"\n\nexport function TooltipPositionsDemo() {\n  return (\n    <div className="flex gap-4">\n      <Tooltip>\n        <TooltipTrigger render={<Button variant="outline">Topo</Button>} />\n        <TooltipContent side="top">Tooltip no Topo</TooltipContent>\n      </Tooltip>\n      <Tooltip>\n        <TooltipTrigger render={<Button variant="outline">Baixo</Button>} />\n        <TooltipContent side="bottom">Tooltip no Baixo</TooltipContent>\n      </Tooltip>\n      <Tooltip>\n        <TooltipTrigger render={<Button variant="outline">Esquerda</Button>} />\n        <TooltipContent side="left">Tooltip na Esquerda</TooltipContent>\n      </Tooltip>\n      <Tooltip>\n        <TooltipTrigger render={<Button variant="outline">Direita</Button>} />\n        <TooltipContent side="right">Tooltip na Direita</TooltipContent>\n      </Tooltip>\n    </div>\n  )\n}`}>
+  <div className="flex flex-wrap items-center justify-center gap-4">
+    <Tooltip>
+      <TooltipTrigger render={
+        <Button variant="outline" className="border-border">Topo (Top)</Button>
+      } />
+      <TooltipContent side="top">
+        <p className="text-xs font-medium">Dica posicionada no Topo</p>
+      </TooltipContent>
+    </Tooltip>
+
+    <Tooltip>
+      <TooltipTrigger render={
+        <Button variant="outline" className="border-border">Baixo (Bottom)</Button>
+      } />
+      <TooltipContent side="bottom">
+        <p className="text-xs font-medium">Dica posicionada no Baixo</p>
+      </TooltipContent>
+    </Tooltip>
+
+    <Tooltip>
+      <TooltipTrigger render={
+        <Button variant="outline" className="border-border">Esquerda (Left)</Button>
+      } />
+      <TooltipContent side="left">
+        <p className="text-xs font-medium">Dica na Esquerda</p>
+      </TooltipContent>
+    </Tooltip>
+
+    <Tooltip>
+      <TooltipTrigger render={
+        <Button variant="outline" className="border-border">Direita (Right)</Button>
+      } />
+      <TooltipContent side="right">
+        <p className="text-xs font-medium">Dica na Direita</p>
+      </TooltipContent>
+    </Tooltip>
+  </div>
 </ComponentPreview>
 
 ## Código Manual
@@ -42,8 +68,8 @@ import { Button } from "@/components/ui/button"
 export function ExemploTooltip() {
   return (
     <Tooltip>
-      <TooltipTrigger render={<Button variant="outline">Passe o mouse</Button>} />
-      <TooltipContent><p>Dica explicativa</p></TooltipContent>
+      <TooltipTrigger render={<Button variant="outline">Topo</Button>} />
+      <TooltipContent side="top"><p>Tooltip em Cima</p></TooltipContent>
     </Tooltip>
   )
 }

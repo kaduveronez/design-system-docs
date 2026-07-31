@@ -7,15 +7,15 @@ description: Menu de contexto acionado via clique com o botão direito.
 
 Exibe um menu de opções em resposta ao clique com o botão direito do mouse em uma área demarcada.
 
-import { Button } from '@/components/ui/button'
+import { ContextMenuDemo } from '@/components/docs/demos/ContextMenuDemo'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`export function ContextMenuDemo() {\n  return (\n    <div className="flex h-[150px] w-full items-center justify-center rounded-md border border-dashed border-border text-sm text-muted-foreground">\n      Clique com o botão direito aqui\n    </div>\n  )\n}`}>
-  <div className="flex h-[150px] w-full max-w-sm items-center justify-center rounded-xl border-2 border-dashed border-border bg-muted/30 text-sm font-medium text-muted-foreground select-none">
-    Clique com o botão direito nesta área
-  </div>
+Clique com o **botão direito do mouse** no retângulo tracejado abaixo para testar o menu de contexto real:
+
+<ComponentPreview code={`import {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuSeparator,\n  ContextMenuTrigger,\n} from "@/components/ui/context-menu"\nimport { toast } from "sonner"\n\nexport function ContextMenuDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className="flex h-[180px] w-full items-center justify-center border-2 border-dashed rounded-xl">\n        Clique com o botão direito aqui\n      </ContextMenuTrigger>\n      <ContextMenuContent>\n        <ContextMenuItem onClick={() => toast.success("Copiado!")}>Copiar Link</ContextMenuItem>\n        <ContextMenuItem>Baixar SVG</ContextMenuItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  )\n}`}>
+  <ContextMenuDemo />
 </ComponentPreview>
 
 ## Código Manual
@@ -28,7 +28,7 @@ import {
   ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 
-export function ContextMenuDemo() {
+export function ExemploContextMenu() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">

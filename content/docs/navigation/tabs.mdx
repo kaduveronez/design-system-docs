@@ -1,6 +1,6 @@
 ---
 title: Tabs
-description: Abas para organização de conteúdos intercalados.
+description: Abas compactas para organização de conteúdos intercalados.
 ---
 
 # Tabs
@@ -12,17 +12,19 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"\n\nexport function TabsDemo() {\n  return (\n    <Tabs defaultValue="url" className="w-[400px]">\n      <TabsList className="grid w-full grid-cols-2">\n        <TabsTrigger value="url">URL Web</TabsTrigger>\n        <TabsTrigger value="vcard">VCard</TabsTrigger>\n      </TabsList>\n      <TabsContent value="url" className="p-4 border rounded-md">Conteúdo URL</TabsContent>\n      <TabsContent value="vcard" className="p-4 border rounded-md">Conteúdo VCard</TabsContent>\n    </Tabs>\n  )\n}`}>
+<ComponentPreview code={`import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"\n\nexport function TabsDemo() {\n  return (\n    <Tabs defaultValue="url" className="w-[350px]">\n      <TabsList className="grid w-full grid-cols-2 h-9 p-1">\n        <TabsTrigger value="url">Link Web</TabsTrigger>\n        <TabsTrigger value="vcard">Cartão VCard</TabsTrigger>\n      </TabsList>\n      <TabsContent value="url" className="p-4 border rounded-lg mt-2">Conteúdo Link Web</TabsContent>\n      <TabsContent value="vcard" className="p-4 border rounded-lg mt-2">Conteúdo VCard</TabsContent>\n    </Tabs>\n  )\n}`}>
   <Tabs defaultValue="url" className="w-[350px]">
-    <TabsList className="grid w-full grid-cols-2">
-      <TabsTrigger value="url">Link Web</TabsTrigger>
-      <TabsTrigger value="vcard">Cartão VCard</TabsTrigger>
+    <TabsList className="grid w-full grid-cols-2 h-9 p-1 bg-muted rounded-lg">
+      <TabsTrigger value="url" className="text-xs font-medium py-1">Link Web</TabsTrigger>
+      <TabsTrigger value="vcard" className="text-xs font-medium py-1">Cartão VCard</TabsTrigger>
     </TabsList>
-    <TabsContent value="url" className="p-4 border border-border rounded-xl bg-background mt-2 text-xs">
-      Insira o link para redirecionamento do seu QR Code dinâmico.
+    <TabsContent value="url" className="p-4 border border-border rounded-xl bg-card mt-3 text-xs space-y-1">
+      <p className="font-semibold text-foreground">Configuração de Link Web</p>
+      <p className="text-muted-foreground">Insira a URL de destino para o seu QR Code dinâmico.</p>
     </TabsContent>
-    <TabsContent value="vcard" className="p-4 border border-border rounded-xl bg-background mt-2 text-xs">
-      Preencha seu nome, telefone e e-mail profissional.
+    <TabsContent value="vcard" className="p-4 border border-border rounded-xl bg-card mt-3 text-xs space-y-1">
+      <p className="font-semibold text-foreground">Cartão VCard Profissional</p>
+      <p className="text-muted-foreground">Preencha nome, cargo, telefone e e-mail de contato.</p>
     </TabsContent>
   </Tabs>
 </ComponentPreview>
@@ -32,12 +34,12 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 ```tsx
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export function TabsDemo() {
+export function ExemploTabs() {
   return (
-    <Tabs defaultValue="account">
-      <TabsList>
-        <TabsTrigger value="account">Conta</TabsTrigger>
-        <TabsTrigger value="password">Senha</TabsTrigger>
+    <Tabs defaultValue="url">
+      <TabsList className="h-9">
+        <TabsTrigger value="url">Link Web</TabsTrigger>
+        <TabsTrigger value="vcard">VCard</TabsTrigger>
       </TabsList>
     </Tabs>
   )

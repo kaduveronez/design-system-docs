@@ -1,26 +1,41 @@
 ---
 title: Avatar
-description: Imagem de perfil do usuário com tratamento de fallback.
+description: Imagem de perfil do usuário com tratamento de fallback e indicativo de status.
 ---
 
 # Avatar
 
-Componente visual de imagem circular com iniciais em caso de falha de carregamento.
+Componente visual de imagem circular para perfis de usuários com fallback em iniciais e badge de status.
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage, AvatarBadge } from '@/components/ui/avatar'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport function AvatarDemo() {\n  return (\n    <Avatar>\n      <AvatarImage src="https://github.com/shadcn.png" alt="@genqrcode" />\n      <AvatarFallback>GQ</AvatarFallback>\n    </Avatar>\n  )\n}`}>
-  <div className="flex items-center justify-center gap-4">
-    <Avatar className="h-12 w-12 border border-border">
-      <AvatarImage src="https://github.com/shadcn.png" alt="@genqrcode" />
-      <AvatarFallback>GQ</AvatarFallback>
-    </Avatar>
-    <Avatar className="h-12 w-12 border border-border bg-primary text-primary-foreground font-semibold">
-      <AvatarFallback>GQ</AvatarFallback>
-    </Avatar>
+<ComponentPreview code={`import { Avatar, AvatarFallback, AvatarImage, AvatarBadge } from "@/components/ui/avatar"\n\nexport function AvatarDemo() {\n  return (\n    <div className="flex items-center gap-4">\n      <Avatar size="lg">\n        <AvatarImage src="https://github.com/shadcn.png" alt="@genqrcode" />\n        <AvatarFallback>GQ</AvatarFallback>\n        <AvatarBadge className="bg-green-500" />\n      </Avatar>\n      <Avatar size="lg">\n        <AvatarFallback className="bg-primary text-primary-foreground font-bold">GQ</AvatarFallback>\n      </Avatar>\n    </div>\n  )\n}`}>
+  <div className="flex flex-wrap items-center justify-center gap-6">
+    <div className="flex flex-col items-center gap-2">
+      <Avatar size="lg" className="h-12 w-12 border border-border">
+        <AvatarImage src="https://github.com/shadcn.png" alt="@genqrcode" />
+        <AvatarFallback>GQ</AvatarFallback>
+        <AvatarBadge className="bg-green-500 h-3 w-3" />
+      </Avatar>
+      <span className="text-[10px] font-mono">Com Imagem + Status</span>
+    </div>
+
+    <div className="flex flex-col items-center gap-2">
+      <Avatar size="lg" className="h-12 w-12 border border-border">
+        <AvatarFallback className="bg-primary text-primary-foreground font-bold text-sm">GQ</AvatarFallback>
+      </Avatar>
+      <span className="text-[10px] font-mono">Fallback Iniciais</span>
+    </div>
+
+    <div className="flex flex-col items-center gap-2">
+      <Avatar size="sm" className="h-8 w-8 border border-border">
+        <AvatarFallback className="bg-secondary text-secondary-foreground font-bold text-xs">GQ</AvatarFallback>
+      </Avatar>
+      <span className="text-[10px] font-mono">Tamanho Pequeno (sm)</span>
+    </div>
   </div>
 </ComponentPreview>
 

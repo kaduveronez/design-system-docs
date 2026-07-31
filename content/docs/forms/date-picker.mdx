@@ -1,30 +1,33 @@
 ---
 title: Date Picker
-description: Seletor de data e calendário interativo.
+description: Seletor de data e calendário estilizado do Gen QRcode Design System.
 ---
 
 # Date Picker
 
-Seletor de data para agendamento de expiração de QR Codes.
+Seletor de data para agendamento de validade e expiração de QR Codes.
 
-import { Input } from '@/components/ui/input'
+import { DatePickerDemo } from '@/components/docs/demos/DatePickerDemo'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 
 ## Preview Interativo
 
-<ComponentPreview code={`import { Input } from "@/components/ui/input"\n\nexport function DatePickerDemo() {\n  return (\n    <Input type="date" className="w-[240px]" />\n  )\n}`}>
-  <div className="w-full max-w-xs space-y-2">
-    <label className="text-xs font-medium text-muted-foreground">Data de Expiração do QR Code</label>
-    <Input type="date" className="w-full" defaultValue="2026-12-31" />
-  </div>
+<ComponentPreview code={`import { Input } from "@/components/ui/input"\nimport { Button } from "@/components/ui/button"\n\nexport function DatePickerDemo() {\n  return (\n    <div className="space-y-3">\n      <Input type="date" value="2026-12-31" />\n      <div className="flex gap-2">\n        <Button size="sm">30 Dias</Button>\n        <Button size="sm" variant="outline">1 Ano</Button>\n      </div>\n    </div>\n  )\n}`}>
+  <DatePickerDemo />
 </ComponentPreview>
 
 ## Código Manual
 
 ```tsx
 import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 
-export function DatePickerDemo() {
-  return <Input type="date" />
+export function ExemploDatePicker() {
+  return (
+    <div className="space-y-2">
+      <label className="text-xs font-medium">Data de Expiração</label>
+      <Input type="date" />
+    </div>
+  )
 }
 ```

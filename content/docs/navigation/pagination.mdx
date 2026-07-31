@@ -1,16 +1,15 @@
 ---
 title: Pagination
-description: Controle de navegação por páginas.
+description: Controle de navegação por páginas sem sobreposição de marcadores.
 ---
 
 # Pagination
 
-Divide dados extensos em múltiplas páginas.
+Divide dados extensos em múltiplas páginas navegáveis.
 
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -47,7 +46,7 @@ import { ComponentPreview } from '@/components/docs/ComponentPreview'
 ```tsx
 import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination"
 
-export function PaginationDemo() {
+export function ExemploPagination() {
   return (
     <Pagination>
       <PaginationContent>
